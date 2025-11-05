@@ -48,8 +48,14 @@ function playGmae() {
         playRound(humanChoice,computerChoice);   
     }
     if (humanscore > computerscore) {
-        console.log("you wone!!! ,your score is\n **"+humanscore+"-"+computerscore+"**");
+        console.log(`%c🎉 You won!!! %cYour score: ${humanscore}-${computerscore}`,
+    "color: lime; font-weight: bold; font-size: 16px;",
+    "color: white; font-size: 14px;");
     }else if (humanscore < computerscore) {
-        console.log("you lost ;( ,your score is\n **"+humanscore+"-"+computerscore+"**");
-    }else{console.log("Tie you both gto the same score");}
+        console.log(`%c😢 You lost... %cYour score: ${humanscore}-${computerscore}`,
+    "color: red; font-weight: bold; font-size: 16px;",
+    "color: white; font-size: 14px;");
+    }else{console.log(`%c🤝 It's a tie! %cBoth scored ${humanscore}.`,
+    "color: gold; font-weight: bold; font-size: 16px;",
+    "color: white; font-size: 14px;");}
 }
