@@ -32,6 +32,24 @@ function playRound(humanChoice,computerChoice){
           (humanChoice=="rock" && computerChoice=="scissors") ||
           (humanChoice=="paper" && computerChoice=="rock") ||
           (humanChoice=="scissors" && computerChoice=="paper")
-    ){console.log("you win!!! " + humanChoice + " wins " + computerChoice)}
-    else {console.log("you lose ;( " + humanChoice + " wins " + computerChoice)}
+    ){  console.log("you win!!! " + humanChoice + " wins " + computerChoice)
+        humanscore++;
+    }else {
+        console.log("you lose ;( " + humanChoice + " wins " + computerChoice);
+        computerscore++;
+    }
+}
+
+function playGmae() {
+
+    for (let index = 0; index < 5; index++) {
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        playRound(humanChoice,computerChoice);   
+    }
+    if (humanscore > computerscore) {
+        console.log("you wone!!! ,your score is\n **"+humanscore+"-"+computerscore+"**");
+    }else if (humanscore < computerscore) {
+        console.log("you lost ;( ,your score is\n **"+humanscore+"-"+computerscore+"**");
+    }else{console.log("Tie you both gto the same score");}
 }
