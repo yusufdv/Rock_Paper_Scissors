@@ -18,13 +18,19 @@ function getComputerChoice(){
     return choice;
 }
 
-function getHumanChoice(){
+/*function getHumanChoice(){
     let choice = prompt("Chose your wepon!!")
     return choice;
-}
+}*/
+
+const choices = document.querySelector('#Choices');
+
+choices.addEventListener('click',(event) => {
+    button = event.target.closest('button');
+    let humanChoice = button.id;
+    playgame(humanChoice);}   )
 
 function playRound(humanChoice,computerChoice){
-    humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice==computerChoice) {
         console.log("its a tie both of you chose "+ computerChoice);
@@ -40,14 +46,15 @@ function playRound(humanChoice,computerChoice){
     }
 }
 
-function playGmae() {
 
-    for (let index = 0; index < 5; index++) {
-        let humanChoice = getHumanChoice();
+function playgame(humanChoice) {
+        let rounds = 0;
         let computerChoice = getComputerChoice();
         playRound(humanChoice,computerChoice);   
-    }
-    if (humanscore > computerscore) {
+        rounds ++;
+   if(rounds == 5){
+    rounds = 0;
+     if (humanscore > computerscore) {
         console.log(`%c🎉 You won!!! %cYour score: ${humanscore}-${computerscore}`,
     "color: lime; font-weight: bold; font-size: 16px;",
     "color: white; font-size: 14px;");
@@ -58,4 +65,8 @@ function playGmae() {
     }else{console.log(`%c🤝 It's a tie! %cBoth scored ${humanscore}.`,
     "color: gold; font-weight: bold; font-size: 16px;",
     "color: white; font-size: 14px;");}
+   }else
+   {
+    console.log('you still have -->',5-rounds,'<-- left')
+   }
 }
