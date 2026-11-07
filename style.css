@@ -1,0 +1,23 @@
+.head-bar, .foot-bar {
+    color: rgb(128, 0, 32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.foot-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#Choices{
+    display: flex;
+    justify-content: center;
+    gap: 20px;               /* Adds space between the buttons */
+    padding: 40px 0;  
+}
