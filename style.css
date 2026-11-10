@@ -1,4 +1,22 @@
-.head-bar, .foot-bar {
+body {
+    background-color: #fefefe;
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/*game card*/
+.game-card{
+    background-color: aliceblue;
+    padding: 20px;
+
+}
+
+/*Header and */
+.head-bar{
     color: rgb(128, 0, 32);
     display: flex;
     justify-content: center;
@@ -8,16 +26,55 @@
     width: 100%;
 }
 
-.foot-bar {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+/*scorebored*/
+.score-bored{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#human-score,#pc-score{
+    border: solid 3px rgb(128, 0, 32);
+    border-radius: 6px;
+    padding: 10px;
+    margin:10px;
+    color: rgb(128, 0, 32);    
+}
+
+/*Choices*/
 #Choices{
     display: flex;
     justify-content: center;
-    gap: 20px;               /* Adds space between the buttons */
-    padding: 40px 0;  
+    gap: 20px;               
+    padding: 40px 0; 
 }
+
+#Choices button {
+  background-color: white; 
+  color: rgb(128, 0, 32);             
+  padding: 10px 20px;       
+  font-size: 16px;           
+  border: solid rgb(128, 0, 32);              
+  border-radius: 5px;       
+  margin: 5px;              
+  cursor: pointer;           
+}
+
+#Choices button:hover {
+  background-color: rgb(128, 0, 32); 
+  color: aliceblue;
+}
+
+/* message & ruonds left*/
+
+#game-message, #rounds-left{
+    display: flex;
+    justify-content: center;
+    color: rgb(128, 0, 32);
+    font-size:larger ;
+    font-weight: 300;
+}
+
+
+
+

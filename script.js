@@ -7,6 +7,8 @@ let rounds = 0;
 const message = document.getElementById("game-message");
 const roundsLeft = document.getElementById("rounds-left");
 const choices = document.querySelector('#Choices');
+const humanch = document.querySelector('#human-score');
+const pcch = document.querySelector('#pc-score');
 
 function getComputerChoice(){
     let v = Math.random();
@@ -47,6 +49,8 @@ function playRound(humanChoice,computerChoice){
         computerscore++;
         message.innerHTML=`You lose ): (PC chose ${computerChoice})`
     }
+    humanch.innerHTML=`Player: ${humanscore}` 
+    pcch.innerHTML=`Computer: ${computerscore}`
 }
 
 
@@ -65,11 +69,14 @@ function playgame(humanChoice) {
 
     if (rounds === 5) {
         if (humanscore > computerscore) {
-            message.innerHTML = `Game Over! You Won the Match! Final Score - You: ${humanscore}, PC: ${computerscore}`;
+            message.innerHTML = `Game Over! You Won the Match!`
+            
         } else if (humanscore < computerscore) {
-            message.innerHTML = `Game Over! You Lost the Match! Final Score - You: ${humanscore}, PC: ${computerscore}`;
+            message.innerHTML = `Game Over! You Lost the Match!`
+            
         } else {
-            message.innerHTML = `Game Over! It's a tie match! Final Score - You: ${humanscore}, PC: ${computerscore}`;
+            message.innerHTML = `Game Over! It's a tie match!`
+            
         }
         roundsLeft.innerHTML = `Game finished. Click a button to play again!`;
     } else {
